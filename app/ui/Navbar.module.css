@@ -1,0 +1,115 @@
+/*
+  Aurum Bank — Navbar styles
+  Add to globals.css:
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap');
+*/
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+  background: transparent;
+  transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgba(12, 27, 46, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1rem 4rem;
+  border-bottom-color: rgba(196, 151, 58, 0.18);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  outline: none;
+}
+
+.logoMark {
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(196, 151, 58, 0.25));
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  line-height: 1;
+}
+
+.logoName {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #faf7f0;
+  letter-spacing: 0.04em;
+}
+
+.logoSub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  color: #c4973a;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Login button */
+.loginBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 1px solid rgba(196, 151, 58, 0.55);
+  border-radius: 4px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.loginBtn:hover {
+  background: #c4973a;
+  border-color: #c4973a;
+  color: #0c1b2e;
+}
+
+.loginBtn svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.loginBtn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav,
+  .scrolled {
+    padding: 1rem 1.5rem;
+  }
+
+  .logoSub {
+    display: none;
+  }
+}

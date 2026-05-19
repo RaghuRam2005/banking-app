@@ -1,0 +1,465 @@
+/* LoanSection.module.css — Aurum Bank */
+
+.section {
+  background: #0c1b2e;
+  padding: 8rem 2rem;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: rgba(196, 151, 58, 0.1);
+  border: 1px solid rgba(196, 151, 58, 0.25);
+  border-radius: 100px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #faf7f0;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.5);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   GRID
+   ============================================ */
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grid.gridVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   LEFT — CONFIGURATOR
+   ============================================ */
+.configurator {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Tabs */
+.tabGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tabLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 0.4rem;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  color: rgba(250, 247, 240, 0.45);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+.tab:hover {
+  color: rgba(250, 247, 240, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.activeTab {
+  background: #c4973a !important;
+  color: #0c1b2e !important;
+  font-weight: 500;
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slider field */
+.sliderField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sliderLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.7);
+}
+
+.sliderDisplay {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #c4973a;
+  letter-spacing: 0.02em;
+}
+
+.sliderTrack {
+  position: relative;
+}
+
+/* Custom range slider */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    #c4973a var(--pct, 0%),
+    rgba(255, 255, 255, 0.12) var(--pct, 0%)
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #c4973a;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(196, 151, 58, 0.2);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.slider::-webkit-slider-thumb:hover,
+.slider:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 6px rgba(196, 151, 58, 0.18);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #c4973a;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sliderRange {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.3);
+}
+
+/* ============================================
+   RIGHT — RESULTS CARD
+   ============================================ */
+.resultsCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(196, 151, 58, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease;
+}
+
+.resultsCard:hover {
+  border-color: rgba(196, 151, 58, 0.3);
+}
+
+/* Rate block — hero row at top of card */
+.rateBlock {
+  padding: 2rem 2rem 1.6rem;
+  background: linear-gradient(135deg, rgba(196, 151, 58, 0.14) 0%, rgba(196, 151, 58, 0.04) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rateLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.5);
+  letter-spacing: 0.04em;
+}
+
+.rateValue {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #c4973a;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background: rgba(196, 151, 58, 0.1);
+  margin: 0 1.5rem;
+}
+
+/* Calc rows */
+.calcSection {
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.calcRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calcRowBold .calcLabel {
+  color: rgba(250, 247, 240, 0.85);
+  font-weight: 500;
+}
+
+.calcRowBold .calcValue {
+  color: #faf7f0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.calcLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.45);
+}
+
+.calcValue {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.75);
+}
+
+/* Documents */
+.docsSection {
+  padding: 1.25rem 2rem;
+}
+
+.docsTitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(250, 247, 240, 0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.docsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.docItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.55);
+  line-height: 1.4;
+}
+
+.docCheck {
+  color: #c4973a;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* Action buttons */
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+}
+
+.detailsBtn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(196, 151, 58, 0.4);
+  border-radius: 6px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.detailsBtn:hover {
+  background: rgba(196, 151, 58, 0.08);
+  border-color: #c4973a;
+}
+
+.applyBtn {
+  flex: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #c4973a;
+  border: 1px solid #c4973a;
+  border-radius: 6px;
+  color: #0c1b2e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.applyBtn:hover {
+  background: #d4af5a;
+  border-color: #d4af5a;
+  box-shadow: 0 6px 24px rgba(196, 151, 58, 0.35);
+  transform: translateY(-1px);
+}
+
+.applyBtn svg {
+  transition: transform 0.22s ease;
+}
+
+.applyBtn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .resultsCard {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 5rem 1.25rem;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rateBlock {
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+
+  .calcSection,
+  .docsSection,
+  .cardActions {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
