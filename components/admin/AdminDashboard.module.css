@@ -1,0 +1,346 @@
+/* AdminDashboard.module.css */
+
+.root {
+  display: flex;
+  min-height: 100vh;
+  background: #060f1a;
+  color: #faf7f0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #0c1b2e;
+  border-right: 1px solid rgba(196, 151, 58, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  flex-shrink: 0;
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.logoGold {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c4973a;
+}
+
+.logoSub {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(250, 247, 240, 0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(250, 247, 240, 0.8);
+}
+
+.navActive {
+  background: rgba(196, 151, 58, 0.12) !important;
+  color: #c4973a !important;
+  font-weight: 500;
+}
+
+.navIcon { font-size: 1rem; }
+
+.sidebarFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.75rem;
+  color: rgba(250, 247, 240, 0.35);
+  border-top: 1px solid rgba(196, 151, 58, 0.1);
+  margin-top: 1rem;
+}
+
+.hubDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.hubConnected    { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
+.hubDisconnected { background: #ef4444; }
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.loading {
+  color: rgba(250, 247, 240, 0.4);
+  font-size: 0.875rem;
+  padding: 2rem;
+}
+
+.panel {}
+
+.panelTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid rgba(196, 151, 58, 0.15);
+  padding-bottom: 1rem;
+}
+
+.readOnly {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-left: 0.75rem;
+}
+
+.emptyState {
+  color: rgba(250, 247, 240, 0.35);
+  font-size: 0.875rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* ── Table ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: rgba(250, 247, 240, 0.4);
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(196, 151, 58, 0.1);
+}
+
+.table td {
+  padding: 1rem;
+  color: rgba(250, 247, 240, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: rgba(250, 247, 240, 0.5);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnApprove, .btnHold, .btnReject {
+  padding: 0.4rem 0.85rem;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.btnApprove {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+}
+.btnApprove:hover { background: rgba(34, 197, 94, 0.25); }
+
+.btnHold {
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(234, 179, 8, 0.3);
+  color: #eab308;
+}
+.btnHold:hover { background: rgba(234, 179, 8, 0.2); }
+
+.btnReject {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+.btnReject:hover { background: rgba(239, 68, 68, 0.2); }
+
+/* Status badge */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(250, 247, 240, 0.5);
+}
+
+.badge.completed { background: rgba(34,197,94,0.12); color: #22c55e; }
+.badge.pending   { background: rgba(234,179,8,0.12); color: #eab308; }
+.badge.failed    { background: rgba(239,68,68,0.12); color: #ef4444; }
+
+.credit { color: #22c55e; font-size: 0.78rem; }
+.debit  { color: #ef4444; font-size: 0.78rem; }
+
+/* ── Network Monitor ── */
+.networkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.networkCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 151, 58, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.networkCardLabel {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.networkCardSub {
+  font-size: 0.72rem;
+  color: rgba(250, 247, 240, 0.3);
+  margin-top: 0.35rem;
+}
+
+.networkStatus {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.statusGreen { color: #22c55e; }
+.statusRed   { color: #ef4444; }
+
+.networkValue {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #c4973a;
+}
+
+.networkActions {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(196, 151, 58, 0.1);
+  border-radius: 12px;
+}
+
+.subTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 0 0 0.75rem;
+}
+
+.networkDesc {
+  font-size: 0.85rem;
+  color: rgba(250, 247, 240, 0.5);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 500px;
+}
+
+.syncBtn {
+  padding: 0.7rem 1.5rem;
+  background: #c4973a;
+  color: #0c1b2e;
+  border: none;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.syncBtn:hover { background: #d4af5a; }
+
+.networkInfo {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(196, 151, 58, 0.1);
+  border-radius: 12px;
+}
+
+.archTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.archRow {
+  display: grid;
+  grid-template-columns: 130px 240px 1fr;
+  gap: 1rem;
+  font-size: 0.82rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.archLayer  { color: #c4973a; font-weight: 500; }
+.archMethod { color: rgba(250, 247, 240, 0.6); font-family: monospace; font-size: 0.78rem; }
+.archData   { color: rgba(250, 247, 240, 0.4); }

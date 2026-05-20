@@ -1,0 +1,815 @@
+/* UserDashboard.module.css */
+
+.root {
+  display: flex;
+  min-height: 100vh;
+  background: #060f1a;
+  color: #faf7f0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #0c1b2e;
+  border-right: 1px solid rgba(196, 151, 58, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  flex-shrink: 0;
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.logoGold {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c4973a;
+}
+
+.logoSub {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(250, 247, 240, 0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.accountBadge {
+  background: rgba(196, 151, 58, 0.08);
+  border: 1px solid rgba(196, 151, 58, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.accountType {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+
+.accountNumber {
+  font-size: 0.78rem;
+  color: rgba(250, 247, 240, 0.55);
+  margin-bottom: 0.5rem;
+}
+
+.accountBalance {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #c4973a;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(250, 247, 240, 0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(250, 247, 240, 0.8);
+}
+
+.navActive {
+  background: rgba(196, 151, 58, 0.12) !important;
+  color: #c4973a !important;
+  font-weight: 500;
+}
+
+.navIcon {
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.loading {
+  color: rgba(250, 247, 240, 0.4);
+  font-size: 0.875rem;
+  padding: 2rem;
+}
+
+.sectionTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid rgba(196, 151, 58, 0.15);
+  padding-bottom: 1rem;
+}
+
+.subSection {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 2rem 0 1rem;
+}
+
+/* ── Stats ── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 151, 58, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #c4973a;
+}
+
+/* ── Table ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: rgba(250, 247, 240, 0.4);
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(196, 151, 58, 0.1);
+}
+
+.table td {
+  padding: 0.9rem 1rem;
+  color: rgba(250, 247, 240, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.credit { color: #22c55e; }
+.debit  { color: #ef4444; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(250, 247, 240, 0.5);
+}
+
+.badge.completed { background: rgba(34,197,94,0.12); color: #22c55e; }
+.badge.pending   { background: rgba(234,179,8,0.12);  color: #eab308; }
+.badge.approved  { background: rgba(34,197,94,0.12);  color: #22c55e; }
+.badge.rejected  { background: rgba(239,68,68,0.12);  color: #ef4444; }
+.badge.failed    { background: rgba(239,68,68,0.12);  color: #ef4444; }
+
+.emptyState {
+  color: rgba(250, 247, 240, 0.3);
+  font-size: 0.875rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* ── Transfer ── */
+.modeToggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modeBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: rgba(250, 247, 240, 0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modeBtn:hover { color: rgba(250, 247, 240, 0.8); }
+
+.modeBtnActive {
+  background: rgba(196, 151, 58, 0.12) !important;
+  border-color: rgba(196, 151, 58, 0.35) !important;
+  color: #c4973a !important;
+}
+
+.modePill {
+  padding: 0.15rem 0.5rem;
+  background: rgba(196, 151, 58, 0.1);
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #c4973a;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.transferCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 151, 58, 0.12);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 520px;
+}
+
+.transferNote {
+  font-size: 0.82rem;
+  color: rgba(250, 247, 240, 0.4);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(196, 151, 58, 0.05);
+  border-left: 2px solid rgba(196, 151, 58, 0.3);
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── Form fields ── */
+.fieldGroup {
+  margin-bottom: 1.25rem;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.fieldInput,
+.fieldSelect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #faf7f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.fieldInput:focus,
+.fieldSelect:focus {
+  border-color: rgba(196, 151, 58, 0.5);
+}
+
+.fieldSelect option { background: #0c1b2e; }
+
+.radioGroup {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.4rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: rgba(250, 247, 240, 0.6);
+  cursor: pointer;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #c4973a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.85rem;
+  background: #c4973a;
+  color: #0c1b2e;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #d4af5a;
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Loans ── */
+.loanGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .loanGrid { grid-template-columns: 1fr; }
+}
+
+.loanCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 151, 58, 0.12);
+  border-radius: 16px;
+  padding: 1.75rem;
+}
+
+.cardTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 0 0 1.25rem;
+}
+
+.emiPreview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(196, 151, 58, 0.08);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: rgba(250, 247, 240, 0.6);
+}
+
+.emiValue {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #c4973a;
+}
+
+.loanList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loanItem {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.loanType {
+  font-weight: 500;
+  text-transform: capitalize;
+  flex: 1;
+}
+
+.loanAmount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #c4973a;
+}
+
+.loanEmi {
+  font-size: 0.78rem;
+  color: rgba(250, 247, 240, 0.45);
+  flex: 1 0 100%;
+}
+
+.repayBtn {
+  padding: 0.35rem 0.85rem;
+  background: rgba(196, 151, 58, 0.15);
+  border: 1px solid rgba(196, 151, 58, 0.4);
+  border-radius: 5px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.repayBtn:hover { background: rgba(196, 151, 58, 0.25); }
+
+/* ── Onboarding ── */
+.onboarding {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #060f1a;
+  padding: 2rem;
+}
+
+.onboardCard {
+  background: #0c1b2e;
+  border: 1px solid rgba(196, 151, 58, 0.2);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 560px;
+  width: 100%;
+}
+
+.onboardLogo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c4973a;
+  margin-bottom: 1.5rem;
+}
+
+.onboardTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 0 0 0.75rem;
+}
+
+.onboardDesc {
+  font-size: 0.9rem;
+  color: rgba(250, 247, 240, 0.5);
+  margin-bottom: 2rem;
+}
+
+.accountGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.accountOption {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.accountOption:hover {
+  border-color: rgba(196, 151, 58, 0.3);
+  background: rgba(196, 151, 58, 0.05);
+}
+
+.accountSelected {
+  border-color: #c4973a !important;
+  background: rgba(196, 151, 58, 0.1) !important;
+}
+
+.accountOptionName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin-bottom: 0.3rem;
+}
+
+.accountOptionDesc {
+  font-size: 0.75rem;
+  color: rgba(250, 247, 240, 0.45);
+}
+
+.onboardBtn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #c4973a;
+  color: #0c1b2e;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.onboardBtn:hover:not(:disabled) { background: #d4af5a; }
+.onboardBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Multi-account additions ── */
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionHeader .sectionTitle {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.newAccountBtn {
+  padding: 0.55rem 1.2rem;
+  background: rgba(196, 151, 58, 0.12);
+  border: 1px solid rgba(196, 151, 58, 0.4);
+  border-radius: 7px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.newAccountBtn:hover { background: rgba(196, 151, 58, 0.22); }
+
+.newAccountForm {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 151, 58, 0.15);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Account cards grid */
+.accountCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.accountCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.accountCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c4973a, #e8c56d, #c4973a);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.accountCard:hover { border-color: rgba(196, 151, 58, 0.25); }
+.accountCard:hover::before { opacity: 1; }
+
+.accountCardActive {
+  border-color: rgba(196, 151, 58, 0.4) !important;
+}
+.accountCardActive::before { opacity: 1 !important; }
+
+.accountCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.accountCardType {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(250, 247, 240, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.accountCardStatus {
+  font-size: 0.68rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(250, 247, 240, 0.4);
+  text-transform: capitalize;
+}
+.statusActive { background: rgba(34,197,94,0.12); color: #22c55e; }
+
+.accountCardBalance {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #c4973a;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.accountCardNumber {
+  font-size: 0.78rem;
+  color: rgba(250, 247, 240, 0.4);
+  font-family: monospace;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+}
+
+.accountCardIfsc {
+  font-size: 0.72rem;
+  color: rgba(250, 247, 240, 0.3);
+  margin-bottom: 1.25rem;
+}
+
+.accountCardBtn {
+  background: none;
+  border: 1px solid rgba(196, 151, 58, 0.3);
+  border-radius: 6px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.accountCardBtn:hover { background: rgba(196, 151, 58, 0.1); }
+
+/* Empty state */
+.emptyAccounts {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.emptyIcon {
+  font-size: 2.5rem;
+  color: rgba(196, 151, 58, 0.3);
+  margin-bottom: 1rem;
+}
+.emptyTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(250, 247, 240, 0.6);
+  margin-bottom: 0.5rem;
+}
+.emptyDesc {
+  font-size: 0.85rem;
+  color: rgba(250, 247, 240, 0.3);
+  max-width: 320px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Account switcher in sidebar */
+.accountSwitcher {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(196, 151, 58, 0.1);
+}
+
+.switcherLabel {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.switcherItem {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0.2rem;
+}
+.switcherItem:hover { background: rgba(255, 255, 255, 0.04); }
+
+.switcherActive { background: rgba(196, 151, 58, 0.1) !important; }
+
+.switcherType {
+  font-size: 0.68rem;
+  color: rgba(250, 247, 240, 0.4);
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+}
+.switcherNum {
+  font-size: 0.78rem;
+  color: rgba(250, 247, 240, 0.55);
+}
+.switcherBal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #c4973a;
+}
+
+/* Portfolio account switcher dropdown */
+.accountSwitchSelect {
+  padding: 0.5rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(196, 151, 58, 0.25);
+  border-radius: 7px;
+  color: #c4973a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  outline: none;
+  cursor: pointer;
+}
+.accountSwitchSelect option { background: #0c1b2e; }
+
+/* Account option icon */
+.accountOptionIcon {
+  font-size: 1.4rem;
+  color: rgba(196, 151, 58, 0.6);
+  margin-bottom: 0.5rem;
+}
+.statusPending  { background: rgba(196,151,58,0.12); color: #c4973a; }
+.statusRejected { background: rgba(239,68,68,0.12);  color: #ef4444; }
+

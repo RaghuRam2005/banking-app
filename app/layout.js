@@ -1,25 +1,36 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// src/app/layout.js
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import { AuthProvider } from '@/context/AuthContext'
+import './globals.css'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const dmSans = DM_Sans({
+  variable: '--font-dm-sans',
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  display: 'swap',
+})
 
 export const metadata = {
-  title: "Aura Bank",
-  description: "Banking Application",
-};
+  title: 'Nova Bank — Banking Elevated, Life Simplified',
+  description: 'Nova Bank combines financial expertise with cutting-edge technology.',
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+      <body>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
-  );
+  )
 }

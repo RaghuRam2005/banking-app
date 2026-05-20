@@ -38,7 +38,7 @@ const accounts = [
     ),
   },
   {
-    id: 'wealth',
+    id: 'premium',
     name: 'Premium Wealth Account',
     desc: 'Exclusive banking privileges designed for high net worth individuals',
     icon: (
@@ -56,7 +56,6 @@ export default function AccountTypesSection() {
   return (
     <section id="accounts" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
-        {/* Heading */}
         <div className={`${styles.header} ${sectionVisible ? styles.visible : ''}`}>
           <div className={styles.badge}>Account Types</div>
           <h2 className={styles.title}>Find Your Perfect Account</h2>
@@ -66,14 +65,10 @@ export default function AccountTypesSection() {
           </p>
         </div>
 
-        {/* Elevated card */}
-        <div
-          className={`${styles.card} ${cardVisible ? styles.cardVisible : ''}`}
-          ref={cardRef}
-        >
+        <div className={`${styles.card} ${cardVisible ? styles.cardVisible : ''}`} ref={cardRef}>
           {accounts.map((account, i) => (
             <Link
-              href="/login"
+              href={`/login?open=${account.id}`}
               key={account.id}
               className={styles.row}
               style={{ transitionDelay: cardVisible ? `${i * 0.07}s` : '0s' }}
@@ -97,7 +92,6 @@ export default function AccountTypesSection() {
           ))}
         </div>
 
-        {/* Small footnote */}
         <p className={`${styles.footnote} ${sectionVisible ? styles.visible : ''}`}>
           All accounts are insured under DICGC up to ₹5 Lakhs.
         </p>

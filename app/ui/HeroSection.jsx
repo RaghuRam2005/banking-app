@@ -52,7 +52,7 @@ export default function HeroSection() {
         </h1>
 
         <p className={styles.subtitle}>
-          Aurum Bank combines decades of financial expertise with cutting-edge technology
+          Nova Bank combines decades of financial expertise with cutting-edge technology
           to deliver a banking experience that truly serves you — from everyday savings
           to wealth management.
         </p>

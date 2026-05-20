@@ -17,13 +17,13 @@ export default function Navbar() {
       <Link href="/" className={styles.logo}>
         <img
           src="/favicon.svg"
-          alt="Aurum Bank logo"
+          alt="Nova Bank logo"
           width={38}
           height={38}
           className={styles.logoMark}
         />
         <div className={styles.logoText}>
-          <span className={styles.logoName}>Aurum</span>
+          <span className={styles.logoName}>Nova</span>
           <span className={styles.logoSub}>Bank</span>
         </div>
       </Link>

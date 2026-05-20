@@ -1,12 +1,10 @@
 /*
   ============================================================
-  AURUM BANK — globals.css additions
-  Paste the @import at the very top of your existing globals.css,
-  and the rest below your existing reset/base styles.
+  AURA BANK — globals.css
   ============================================================
 */
 
-/* 1. Google Fonts — add at the TOP of globals.css */
+/* 1. Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap');
 
 /* 2. Scroll behaviour */
@@ -32,14 +30,56 @@ body {
   overflow-x: hidden;
 }
 
-/* 4. Remove list styling globally (optional) */
+/* 4. Remove list styling globally */
 ul, ol {
   list-style: none;
 }
 
-/* 5. Smooth focus outlines for accessibility */
+/* 5. Smooth focus outlines */
 :focus-visible {
   outline: 2px solid #c4973a;
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* 6. Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(196, 151, 58, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 151, 58, 0.5);
+}
+
+/* 7. Toast slide-up animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 8. Input autofill override — prevent white fill on dark backgrounds */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #0c1b2e inset;
+  -webkit-text-fill-color: #faf7f0;
+  caret-color: #faf7f0;
+}
+
+/* 9. Button reset */
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 10. Link reset */
+a {
+  color: inherit;
 }

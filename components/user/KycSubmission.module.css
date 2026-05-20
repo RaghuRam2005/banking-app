@@ -1,0 +1,136 @@
+/* KycSubmission.module.css */
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 151, 58, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 520px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: 100px;
+  color: #eab308;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin: 0 0 0.5rem;
+}
+
+.desc {
+  font-size: 0.82rem;
+  color: rgba(250, 247, 240, 0.45);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(250, 247, 240, 0.45);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.input {
+  padding: 0.72rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  color: #faf7f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus { border-color: rgba(196, 151, 58, 0.5); }
+.input::placeholder { color: rgba(250, 247, 240, 0.2); }
+
+.error {
+  padding: 0.6rem 0.9rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #ef4444;
+}
+
+.btn {
+  padding: 0.8rem;
+  background: #c4973a;
+  color: #0c1b2e;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.25rem;
+}
+
+.btn:hover:not(:disabled) { background: #d4af5a; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Success state */
+.successBox {
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 440px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.successTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #faf7f0;
+  margin-bottom: 0.5rem;
+}
+
+.successDesc {
+  font-size: 0.82rem;
+  color: rgba(250, 247, 240, 0.45);
+  line-height: 1.65;
+}
