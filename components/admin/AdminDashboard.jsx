@@ -10,6 +10,8 @@
  *  5. Network Monitor   — BMS hub connection status
  */
 import { useState, useEffect, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/context/AuthContext'
 import { hubAuth, hubDb } from '@/lib/firebaseHub'
 import { onAuthStateChanged } from 'firebase/auth'
 import { collection, query, where, onSnapshot } from 'firebase/firestore'
